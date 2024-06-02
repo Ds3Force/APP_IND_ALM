@@ -27,7 +27,8 @@ def hash_password(password):
 
 def generate_qr_code(username, password):
     # Combina el nombre de usuario y la contraseña en una cadena
-    user_data = f"Username: {username}\nPassword: {password}"
+    '''user_data = f"Username: {username}\nPassword: {password}"'''
+    user_data = f"{username}\n{password}"
 
     # Genera un código QR con la información del usuario
     qr = qrcode.QRCode(
