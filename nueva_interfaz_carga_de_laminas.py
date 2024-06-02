@@ -75,7 +75,7 @@ def guardar_y_cerrar():
     proveedor = entry_proveedor.get()
 
     if material and calibre and cantidad and cliente and proveedor:
-        guardar_datos(material, calibre, cantidad, cliente, proveedor, username)
+        guardar_datos(material, calibre, cantidad, cliente, proveedor, '''username''')
         app_laminas_almacenamiento.destroy()
     else:
         messagebox.showwarning("Advertencia", "Por favor, complete todos los campos.")
@@ -86,8 +86,9 @@ def exit_program():
 crear_tabla()
 
 app_laminas_almacenamiento = ctk.CTk()
-app_laminas_almacenamiento.geometry('550x450')
+app_laminas_almacenamiento.geometry('650x450')
 app_laminas_almacenamiento.title("Formulario de Registro")
+
 
 label_material = ctk.CTkLabel(app_laminas_almacenamiento, text="Material:")
 label_material.pack()
@@ -120,9 +121,9 @@ entry_proveedor = ctk.CTkEntry(app_laminas_almacenamiento)
 entry_proveedor.pack()
 
 button_guardar = ctk.CTkButton(app_laminas_almacenamiento, text="Guardar", command=guardar_y_cerrar)
-button_guardar.pack()
+button_guardar.pack(padx=20, pady=20)
 
 button_exit = ctk.CTkButton(app_laminas_almacenamiento, text="Salir", fg_color="red", hover_color="gray", command=exit_program)
-button_exit.pack(pady=15)
+button_exit.pack(padx=20, pady=20)
 
 app_laminas_almacenamiento.mainloop()
