@@ -79,7 +79,7 @@ def registrar_usuario():
 
 # Configuración de la interfaz gráfica para el Registro de Usuario
 app_registro= customtkinter.CTk()
-app_registro.geometry("400x200")
+app_registro.geometry("500x350")
 
 app_registro.title("Registro de Usuario")
 

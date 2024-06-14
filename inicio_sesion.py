@@ -12,10 +12,7 @@ DATABASE = 'usuarios.db'
 
 def switch_event():
     val = switch.get()
-    if val:
-        customtkinter.set_appearance_mode("dark")
-    else:
-        customtkinter.set_appearance_mode("light")
+    customtkinter.set_appearance_mode("dark" if val else "light")
 
 def login(username, password):
     with sqlite3.connect(DATABASE) as conn:
@@ -67,7 +64,8 @@ def leer_qr_desde_camara():
     cv2.destroyAllWindows()
 
 def abrir_otro_archivo(username):
-    ruta_archivo = '/Users/elyangaelgarciarodriguez/Desktop/Yahisa/APP_IND_ALM/nueva_interfaz_carga_de_laminas.py'
+    # Ajusta la ruta del archivo según sea necesario
+    ruta_archivo = '/Users/elyangaelgarciarodriguez/Desktop/Yahisa/APP_IND_ALM/nueva_interfaz_carga_de_laminas.py'  # Cambia esto según sea necesario
     app_background.destroy()  # Cerrar la ventana de inicio de sesión antes de ejecutar el nuevo archivo
     subprocess.run([sys.executable, ruta_archivo, username])
 
